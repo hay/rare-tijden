@@ -16,6 +16,7 @@
         "*://*.parool.nl/*",
         "*://*.metronieuws.nl/*",
         "*://*.linda.nl/*",
+        "*://pointer.kro-ncrv.nl/*",
         "*://*.volkskrant.nl/*"
       ],
       "js": ["app.js"]

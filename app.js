@@ -66,6 +66,13 @@ const scripts = [
     {
         domain : 'linda.nl',
         selector : '.article-content_hasIntro p strong'
+    },
+    {
+        domain : 'pointer.kro-ncrv.nl',
+        render(el) {
+            el.innerHTML = 'Het is weer zover. ' + el.innerHTML;
+        },
+        selector : '.paragraphs-wrapper p strong'
     }
 ];
 
