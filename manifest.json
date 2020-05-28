@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Rare tijden",
-  "description": "Plakt de zin 'Het zijn rare tijden.' voor elk nieuwsartikel.",
+  "description": "Plakt de zin 'Het zijn rare tijden.' voor artikelen op de grootste Nederlandse nieuwssites.",
   "version": "1.0",
   "content_scripts": [
     {
