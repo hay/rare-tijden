@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Rare tijden",
+  "description": "Plakt de zin 'Het zijn rare tijden.' voor elk nieuwsartikel.",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.nu.nl/*",
+        "*://*.nos.nl/*",
+        "*://*.nrc.nl/*",
+        "*://*.telegraaf.nl/*",
+        "*://*.ad.nl/*",
+        "*://*.rtlnieuws.nl/*",
+        "*://*.trouw.nl/*",
+        "*://*.parool.nl/*",
+        "*://*.metronieuws.nl/*",
+        "*://*.linda.nl/*",
+        "*://*.volkskrant.nl/*"
+      ],
+      "js": ["app.js"]
+    }
+  ],
+  "icons": {
+  }
+}
