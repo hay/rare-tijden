@@ -18,6 +18,7 @@
         "*://*.linda.nl/*",
         "*://pointer.kro-ncrv.nl/*",
         "*://*.volkskrant.nl/*"
+        "*://omroepgelderland.nl/nieuws/*"
       ],
       "js": ["app.js"]
     }
