@@ -2,22 +2,29 @@
   "manifest_version": 2,
   "name": "Rare tijden",
   "description": "Plakt de zin 'Het zijn rare tijden.' voor artikelen op de grootste Nederlandse nieuwssites.",
-  "version": "1.0",
+  "version": "1.2",
   "content_scripts": [
     {
       "matches": [
-        "*://*.nu.nl/*",
+        "*://*.ad.nl/*",
+        "*://*.bd.nl/*",
+        "*://*.bndestem.nl/*",
+        "*://*.destentor.nl/*",
+        "*://*.ed.nl/*",
+        "*://*.gelderlander.nl/*",
+        "*://*.linda.nl/*",
+        "*://*.metronieuws.nl/*",
         "*://*.nos.nl/*",
         "*://*.nrc.nl/*",
-        "*://*.telegraaf.nl/*",
-        "*://*.ad.nl/*",
-        "*://*.rtlnieuws.nl/*",
-        "*://*.trouw.nl/*",
+        "*://*.nu.nl/*",
         "*://*.parool.nl/*",
-        "*://*.metronieuws.nl/*",
-        "*://*.linda.nl/*",
-        "*://pointer.kro-ncrv.nl/*",
-        "*://*.volkskrant.nl/*"
+        "*://*.pzc.nl/*",
+        "*://*.rtlnieuws.nl/*",
+        "*://*.telegraaf.nl/*",
+        "*://*.tubantia.nl/*",
+        "*://*.trouw.nl/*",
+        "*://*.volkskrant.nl/*",
+        "*://pointer.kro-ncrv.nl/*"
       ],
       "js": ["app.js"]
     }

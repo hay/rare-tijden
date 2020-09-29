@@ -7,10 +7,6 @@ const scripts = [
         selector : ".article-body .excerpt"
     },
     {
-        domain : 'volkskrant.nl',
-        selector : ".artstyle__intro"
-    },
-    {
         domain : 'nos.nl',
         selector : '[class^="contentBody_"] p'
     },
@@ -34,7 +30,14 @@ const scripts = [
         selector : '[id^="articleIntro"]'
     },
     {
-        domain : 'ad.nl',
+        domain : 'rtlnieuws.nl',
+        selector : '.lede',
+    },
+    // AD & friends
+    {
+        domain : [
+            'ad.nl', 'bd.nl', 'bndestem.nl', 'destentor.nl', 'ed.nl', 'gelderlander.nl', 'pzc.nl', 'tubantia.nl'
+        ],
         render(el) {
             // Check if we have this span thing
             if (!!el.querySelector('span')) {
@@ -42,21 +45,25 @@ const scripts = [
                     '</span>', `</span> ${SENTENCE}`
                 );
             } else {
-                el.innerHTML = SENTENCE + el.innerHTML;
+                // Sometimes there is a place lead in front of the article (e.g. NIJMEGEN - Bla bla),
+                // so we check for that
+                const html = el.innerHTML.trim();
+                const matches = html.match(/^[A-Z]{3,} -/);
+
+                if (!matches) {
+                    el.innerHTML = SENTENCE + html;
+                } else {
+                    // First match has the position of where we need to insert
+                    const pos = matches[0].length;
+                    el.innerHTML = html.slice(0, pos) + ` ${SENTENCE}` + html.slice(pos);
+                }
             }
         },
         selector : '.article__intro'
     },
+    // Trouw, Volkskrant, Parool
     {
-        domain : 'rtlnieuws.nl',
-        selector : '.lede',
-    },
-    {
-        domain : 'trouw.nl',
-        selector : '.artstyle__intro span'
-    },
-    {
-        domain : 'parool.nl',
+        domain : ['volkskrant.nl', 'parool.nl', 'trouw.nl'],
         selector : '.artstyle__intro'
     },
     {
@@ -77,14 +84,22 @@ const scripts = [
 ];
 
 for (const script of scripts) {
-    if (window.location.host.endsWith(script.domain)) {
-        const el = $(script.selector);
+    // Domain can either be a single string or an array of strings. For
+    // simplicty, we put a single string in an array
+    let domains = script.domain;
+    domains = typeof domains === 'string' ? [domains] : domains;
 
-        if (!!el) {
-            if (script.render) {
-                script.render(el);
-            } else {
-                el.innerHTML = SENTENCE + el.innerHTML;
+    for (const domain of domains) {
+        if (window.location.host.endsWith(domain)) {
+            console.log(`😷 Found ${domain}`);
+            const el = $(script.selector);
+
+            if (!!el) {
+                if (script.render) {
+                    script.render(el);
+                } else {
+                    el.innerHTML = SENTENCE + el.innerHTML;
+                }
             }
         }
     }
