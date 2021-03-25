@@ -24,9 +24,18 @@
         "*://*.tubantia.nl/*",
         "*://*.trouw.nl/*",
         "*://*.volkskrant.nl/*",
-        "*://pointer.kro-ncrv.nl/*"
+        "*://pointer.kro-ncrv.nl/*",
+        "*://*.standaard.be/*",
+        "*://*.demorgen.be/*",
+        "*://*.tijd.be/*",
+        "*://*.hln.be/*",
+        "*://*.vrt.be/*",
+        "*://*.nieuwsblad.be/*"
       ],
-      "js": ["app.js"]
+      "js": [
+        "data.js",
+        "app.js"
+      ]
     }
   ],
   "icons": {
