@@ -1,0 +1,115 @@
+:root {
+    --hk-c1: #3c57a6;
+    --hk-c2: #ee3c24;
+    --hk-c3: #6cbd45;
+    --hk-c4: #999;
+    --hk-c5: #333;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 0 white;
+    }
+
+    50% {
+        text-shadow: 0 0 1rem white;
+    }
+
+    100% {
+        text-shadow: 0 0 0 white;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background: var(--hk-c1);
+    color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.25;
+}
+
+a {
+    color: white;
+}
+
+ul {
+    margin-left: 2rem;
+}
+
+.app {
+    padding: 2rem;
+    width: 100%;
+    max-width: 70rem;
+    display: grid;
+    row-gap: 2rem;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+}
+
+.emoji {
+    font-size: 8rem;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h1,
+.emoji {
+    animation: glow 2s infinite alternate linear;
+}
+
+h2 {
+    font-size: 2.4rem;
+    font-weight: normal;
+}
+
+.img {
+    width: 100%;
+    max-width: 50rem;
+    display: block;
+    margin: 0 auto;
+}
+
+menu {
+    display: grid;
+    max-width: 50rem;
+    row-gap: 1rem;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.btn {
+    background: var(--hk-c3);
+    font-size: 3rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    transition: 300ms;
+}
+
+.btn:hover {
+    transform: scale(1.2) rotate(1deg);
+}
+
+.faq h3 {
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+}
